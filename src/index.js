@@ -19,14 +19,6 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-const url = new URL(window.location.href);
-
-if (url.searchParams.has('locale')) {
-} else if (!url.searchParams.has('locale')) {
-  url.searchParams.set('locale', 'ua');
-  history.pushState({}, '', url);
-}
-
 const burgerMenuBtn = document.querySelector('#mobile-menu-btn');
 const mobileNav = document.querySelector('#mobile-nav');
 
