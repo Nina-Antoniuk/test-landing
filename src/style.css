@@ -11,7 +11,6 @@
 }
 
 .body {
-  padding: 0 60px;
   margin: 0;
   line-height: 1.5;
   color: var(--main-text-color);
@@ -54,15 +53,179 @@
   padding: 40px 0;
 }
 
-.logo-wrapper {
-  width: 216px;
-  height: 66px;
+@media screen and (max-width: 1000px) {
+  .body {
+    padding: 0 20px;
+  }
+
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  .logo-wrapper {
+    width: 100px;
+    height: 50px;
+  }
+
+  .mobile-menu-btn {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .open {
+    opacity: 1;
+    pointer-events: all;
+    background-color: #fff;
+  }
+
+  .mobile-nav .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .hero {
+    height: 300px;
+    padding: 60px;
+  }
+
+  .hero-title {
+    font-size: 35px;
+  }
+
+  .info-block {
+    padding: 35px 0;
+  }
+
+  .swiper {
+    width: 280px;
+    height: 200px;
+  }
+
+  .benefits-list-item {
+    padding: 20px 50px;
+  }
+
+  .article-image-wrapper {
+    height: 250px;
+  }
 }
 
-.nav-list {
-  display: flex;
-  gap: 40px;
-  font-size: 20px;
+@media screen and (min-width: 1001px) {
+  .body {
+    padding: 0 60px;
+  }
+
+  .logo-wrapper {
+    width: 216px;
+    height: 66px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: block;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+  }
+
+  .hero {
+    height: 785px;
+    padding: 60px;
+  }
+
+  .hero-title {
+    font-size: 54px;
+  }
+
+  .info-block-wrapper {
+    display: flex;
+    gap: 80px;
+  }
+
+  .info-block {
+    flex-basis: 45%;
+    padding: 75px 0;
+  }
+
+  .swiper {
+    width: 600px;
+    height: 250px;
+  }
+
+  .benefits-list-item {
+    padding: 50px 80px;
+  }
+
+  .articles-block {
+    flex-basis: 49%;
+  }
+
+  .articles-list {
+    position: relative;
+  }
+
+  .articles-list-item {
+    position: absolute;
+    z-index: 100;
+    width: calc((100% - 20px) / 2);
+    height: 570px;
+  }
+
+  .articles-list-item:nth-child(1) {
+    top: -170px;
+    left: 0;
+  }
+
+  .articles-list-item:nth-child(2) {
+    top: -80px;
+    right: 0;
+  }
+
+  .articles-list-item:nth-child(3) {
+    top: calc(570px - 170px + 35px);
+    left: 0;
+  }
+
+  .articles-list-item:nth-child(4) {
+    top: calc(570px - 80px + 35px);
+    right: 0;
+  }
+
+  .article-image-wrapper {
+    height: 447px;
+  }
+
+  .address {
+    font-size: 34px;
+  }
 }
 
 .lang-list {
@@ -76,8 +239,6 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  height: 785px;
-  padding: 60px;
   background-image: url('./images/hero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,20 +259,9 @@
 
 .hero-title {
   max-width: 200px;
-  font-size: 54px;
   margin: 0;
   text-transform: capitalize;
   color: #fff;
-}
-
-.info-block-wrapper {
-  display: flex;
-  gap: 80px;
-}
-
-.info-block {
-  flex-basis: 45%;
-  padding: 75px 0;
 }
 
 .info-block h2 {
@@ -130,8 +280,6 @@
 }
 
 .swiper {
-  width: 600px;
-  height: 250px;
   padding: 0;
   margin: 0;
 }
@@ -144,7 +292,6 @@
 .benefits-list-item {
   display: flex;
   flex-direction: column;
-  padding: 50px 80px;
   background-color: var(--light-accent-color);
 }
 
@@ -167,45 +314,6 @@
   height: 100%;
   width: 100%;
   object-fit: contain;
-}
-
-.articles-block {
-  flex-basis: 49%;
-}
-
-.articles-list {
-  position: relative;
-}
-
-.articles-list-item {
-  position: absolute;
-  z-index: 100;
-  width: calc((100% - 20px) / 2);
-  height: 570px;
-}
-
-.articles-list-item:nth-child(1) {
-  top: -170px;
-  left: 0;
-}
-
-.articles-list-item:nth-child(2) {
-  top: -80px;
-  right: 0;
-}
-
-.articles-list-item:nth-child(3) {
-  top: calc(570px - 170px + 35px);
-  left: 0;
-}
-
-.articles-list-item:nth-child(4) {
-  top: calc(570px - 80px + 35px);
-  right: 0;
-}
-
-.article-image-wrapper {
-  height: 447px;
 }
 
 .article-link {
